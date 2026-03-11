@@ -1,14 +1,15 @@
 # DNA String Comparison Project
-Dr. Jody Paul (V.2026-03-10a)
+Scaffolding for student projects taht involve evaluating
+string comparison algorithms in the context of DNA matching.
 
 In this project we capitalize the acronym DNA fully in identifiers.
 
 ### To add another algorithm:
-Create a class implementing SequenceScoringAlgorithm
- - define getName()
- - define score(...)
- - define higherScoreIsBetter()
-Add the algorithm to the list in DNASearchDemo
+Create a class implementing SequenceScoringAlgorithm.
+ - Define `getName()`
+ - Define `score(...)`
+ - Define `higherScoreIsBetter()`
+Add the algorithm to the list in DNASearchDemo.
 
 ### Here are the implementation and test classes:
 - DNASearchDemo.java
@@ -24,3 +25,19 @@ Add the algorithm to the list in DNASearchDemo
 There are really two different comparisons we want to think about:
 - How well an algorithm measures biological/string similarity
 - How efficiently the algorithm runs
+
+---
+Copyright (C) 2026 Dr. Jody Paul
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
