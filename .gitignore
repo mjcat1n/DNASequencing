@@ -1,0 +1,8 @@
+# Ignore BlueJ's note file
+README.TXT
+
+# Ignore BlueJ's internal management files
+*.ctxt
+*.bluej
+*.class
+*.nbnode
