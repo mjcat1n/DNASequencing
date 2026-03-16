@@ -28,11 +28,15 @@ There are really two different comparisons we want to think about:
 
 ---
 # Changes 16 March 2026
-Added file:
+Added files:
 - DNASearchComparison.java
-Instructions for building/testing using junit17.jar
+- junit17.jar
+
 To compile::
 javac -cp junit17.jar:. *.java
+
+To run::
+java DNASearchComparison DNA_query.txt DNA_sequence_database.txt
 
 To run the unit tests::
 java -jar junit17.jar --class-path . --select-class SequenceMatcherTest
