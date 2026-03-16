@@ -1,5 +1,9 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Demonstrate searching a DNA database with multiple scoring algorithms.
@@ -8,6 +12,7 @@ import java.util.List;
  */
 public class DNASearchDemo {
     static final SequenceScoringAlgorithm EXAMPLE_ALGORITHM = new ExamplePositionMatchAlgorithm();
+    static final SequenceScoringAlgorithm LEVENSHTEIN_ALGORITHM = new Levenshtein();
     /**
      * Runs the example program.
      *
@@ -15,6 +20,7 @@ public class DNASearchDemo {
      */
     public static void main(String[] args) {
         List<DNASequence> database = new ArrayList<>();
+
         database.add(new DNASequence("Human_Example", "ACGTACGT"));
         database.add(new DNASequence("Mouse_Example", "ACGTTCGT"));
         database.add(new DNASequence("Fish_Example", "TTTTACGA"));
@@ -23,7 +29,7 @@ public class DNASearchDemo {
 
         List<SequenceScoringAlgorithm> algorithms = new ArrayList<>();
         algorithms.add(EXAMPLE_ALGORITHM);
-
+        algorithms.add(LEVENSHTEIN_ALGORITHM);
         AlgorithmComparisonManager manager = new AlgorithmComparisonManager(algorithms);
         List<MatchResult> results = manager.compareAll(query, database);
 
@@ -37,5 +43,20 @@ public class DNASearchDemo {
             System.out.println("Score: " + result.getScore());
             System.out.println();
         }
+    }
+
+    public static String choose(File f) throws FileNotFoundException {
+        String result = null;
+        Random rand = new Random();
+        int n = 0;
+        for(Scanner sc = new Scanner(f); sc.hasNext(); )
+        {
+            ++n;
+            String line = sc.nextLine();
+            if(rand.nextInt(n) == 0)
+            result = line;         
+        }
+
+        return result;      
     }
 }
