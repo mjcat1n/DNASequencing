@@ -1,17 +1,22 @@
 # DNA String Comparison Project
-Scaffolding for student projects taht involve evaluating
+
+Scaffolding for student projects that involve evaluating
 string comparison algorithms in the context of DNA matching.
 
 In this project we capitalize the acronym DNA fully in identifiers.
 
-### To add another algorithm:
+## To add another algorithm
+
 Create a class implementing SequenceScoringAlgorithm.
- - Define `getName()`
- - Define `score(...)`
- - Define `higherScoreIsBetter()`
+
+- Define `getName()`
+- Define `score(...)`
+- Define `higherScoreIsBetter()`
+
 Add the algorithm to the list in DNASearchDemo.
 
-### Here are the implementation and test classes:
+## Here are the implementation and test classes
+
 - DNASearchDemo.java
 - DNASequence.java
 - MatchResult.java
@@ -19,30 +24,42 @@ Add the algorithm to the list in DNASearchDemo.
 - SequenceMatcherTest.java
 - SequenceScoringAlgorithm.java
 - ExamplePositionMatchAlgorithm.java
+- Levenshtein.java
+- LongestCommonSubstring.java
+- LongestCommonSubsequence.java
 - AlgorithmComparisonManager.java
 
 ## How shall we compare algorithms?
+
 There are really two different comparisons we want to think about:
+
 - How well an algorithm measures biological/string similarity
 - How efficiently the algorithm runs
 
 ---
-# Changes 16 March 2026
+
+## Changes 16 March 2026
+
 Added files:
+
 - DNASearchComparison.java
 - junit17.jar
 
-To compile::
-javac -cp junit17.jar:. *.java
+To compile:
 
-To run::
-java DNASearchComparison DNA_query.txt DNA_sequence_database.txt
+    javac -cp junit17.jar:. *.java
 
-To run the unit tests::
-java -jar junit17.jar --class-path . --select-class SequenceMatcherTest
+To run:
 
-To produce API documentation::
-javadoc -cp junit17.jar:. -d docs *.java
+    java DNASearchComparison DNA_query.txt DNA_sequence_database.txt
+
+To run the unit tests:
+
+    java -jar junit17.jar --class-path . --select-class SequenceMatcherTest
+
+To produce API documentation:
+
+    javadoc -cp junit17.jar:. -d docs *.java
 
 ---
 Copyright (C) 2026 Dr. Jody Paul

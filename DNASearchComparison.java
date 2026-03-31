@@ -27,7 +27,8 @@ import java.util.List;
 public class DNASearchComparison {
     static final SequenceScoringAlgorithm EXAMPLE_ALGORITHM = new ExamplePositionMatchAlgorithm();
     static final SequenceScoringAlgorithm LEVENSHTEIN = new Levenshtein();
-    static final SequenceScoringAlgorithm LEVENSHTEINDP = new LevenshteinDP();
+    static final SequenceScoringAlgorithm LONGESTSUBSTRING = new LongestCommonSubstring();
+    static final SequenceScoringAlgorithm LONGESTSUBSEQUENCE = new LongestCommonSubsequence();
 
     /**
      * Runs the DNA sequence matching comparison.
@@ -53,8 +54,9 @@ public class DNASearchComparison {
 
             List<SequenceScoringAlgorithm> algorithms = new ArrayList<>();
             algorithms.add(EXAMPLE_ALGORITHM);
-            algorithms.add(LEVENSHTEINDP);
             algorithms.add(LEVENSHTEIN);
+            algorithms.add(LONGESTSUBSTRING);
+            algorithms.add(LONGESTSUBSEQUENCE);
 
             AlgorithmComparisonManager manager = new AlgorithmComparisonManager(algorithms);
             List<MatchResult> results = manager.compareAll(query, database);

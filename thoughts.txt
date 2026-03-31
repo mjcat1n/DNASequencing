@@ -1,1 +1,11 @@
-I learned how to utilize the Levenshtein algorithm to compare two strings and return a similarity score. I'd never used an algorithm like this before, and learning how to implement it was quite easy. Example position matching is a completely different approach to the task than the Levenshtein distance algorithm. The first difference in implementation is that the Levenshtein algorithm presents a higher degree of similarity with a lower score while the example position match algorithm presents a higher degree of similarity with a higher score.
+Area A - Similarity:
+ 
+Comparing all four algorithms made it clear they don't always agree on what "similar" means. Position matching is the most naive one, it just checks if characters line up at the exact same index, so a sequence that's a perfect match but shifted by one base gets scored really poorly. Levenshtein is smarter about that since it accounts for insertions, deletions, and substitutions, which are actual things that happen in DNA mutations. Longest common substring was interesting because it requires the shared characters to be contiguous, so one mismatch in the middle tanks the whole score even if everything else lines up. Longest common subsequence was the most lenient of all four since it picks up shared characters regardless of gaps, which means two pretty different sequences can still score high. For DNA I think Levenshtein and longest common subsequence are more biologically meaningful since real mutations don't always produce clean positional matches.
+ 
+Area B - Efficiency:
+ 
+Position matching runs in O(min(n,m)), so it's always the fastest by a lot. The three DP algorithms all run in O(n*m) time and space since they build out a full matrix, which is fine for the short sequences in this project but would get expensive fast with real genomic data that can be thousands or millions of bases long. In that context the difference between O(min(n,m)) and O(n*m) would be massive and you'd probably need a more optimized approach than what we implemented here.
+ 
+Overall:
+ 
+The hardest part was honestly just keeping substring and subsequence straight, the names are so similar I kept mixing them up at first. Once I figured that out the implementation was pretty straightforward. Overall I get now why there are so many different algorithms for the same problem, it really just depends on what you care about measuring.
