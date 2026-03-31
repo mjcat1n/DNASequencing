@@ -1,3 +1,13 @@
+/**
+ * Algorithm that scores two DNA sequences using Levenshtein edit distance.
+ * The edit distance counts the minimum number of single-character insertions,
+ * deletions, or substitutions needed to transform one sequence into the other.
+ *
+ * A smaller distance indicates greater similarity between the two sequences.
+ *
+ * @author cantinmatt
+ * @version 2026-03-31
+ */
 public class Levenshtein implements SequenceScoringAlgorithm {
     public String getName() {
         return "Levenshtein Distance";

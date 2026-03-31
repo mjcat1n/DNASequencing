@@ -14,7 +14,6 @@ public class DNASequence {
      *
      * @param label the label associated with the sequence
      * @param sequence the DNA sequence text
-     * @return a new DNASequence object
      */
     public DNASequence(String label, String sequence) {
         this.label = Objects.requireNonNull(label, "label must not be null");
