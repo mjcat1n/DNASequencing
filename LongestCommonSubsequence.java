@@ -6,7 +6,7 @@
  * A longer common subsequence indicates greater similarity between
  * the two sequences.
  *
- * @author cantinmatt
+ * @author Matt Cantin
  * @version 2026-03-31
  */
 public class LongestCommonSubsequence implements SequenceScoringAlgorithm {
